@@ -1,4 +1,4 @@
-002,Pen,01,4.00,9600,103
+002,Pen,01,4.00,9690,103
 003,Pencil,01,0.30,201,103,active
 004,Highlighter,01,1.00,120,104,active
 005,Stapler,01,5.00,60,101,active
@@ -14,4 +14,3 @@
 017,Keyboard,03,149.00,40,102,active
 018,Recycled_paper,04,10.00,250,108,active
 019,Controller,03,249.00,20,102,active
-020,test,01,10.00,0,101,discontinued

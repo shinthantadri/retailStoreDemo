@@ -35,7 +35,6 @@ void processStockFile(const char *filename, StockCallback callback, void *data)
     {
       // write the modified product to temp file
       fprintf(tempFile, "%s,%s,%s,%.2f,%d,%s,%s\n", product.productID, product.name, product.categoryID, product.price, product.quantity, product.supplierID, product.status);
-      modified = false; // reset for next iteration
     }
     else
     {
