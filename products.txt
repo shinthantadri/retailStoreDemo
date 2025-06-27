@@ -1,4 +1,4 @@
-002,Pen,01,4.00,9690,103
+002,Pen,01,4.00,9680,103,active
 003,Pencil,01,0.30,201,103,active
 004,Highlighter,01,1.00,120,104,active
 005,Stapler,01,5.00,60,101,active

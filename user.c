@@ -182,7 +182,7 @@ void placeOrder(User *user)
           }
           total += product.price * quantity;
           product.quantity -= quantity;
-          fprintf(tempFile, "%s,%s,%s,%.2f,%d,%s\n", product.productID, product.name, product.categoryID, product.price, product.quantity, product.supplierID, product.status);
+          fprintf(tempFile, "%s,%s,%s,%.2f,%d,%s,%s\n", product.productID, product.name, product.categoryID, product.price, product.quantity, product.supplierID, product.status);
         }
         else
         {
@@ -236,6 +236,11 @@ void placeOrder(User *user)
       fclose(transactionsFile);
       break;
     case 3:
+      if (total != 0)
+      {
+        printf("Please checkout first.\n");
+        break;
+      }
       printf("Returning to main menu...\n");
       return;
     default:

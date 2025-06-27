@@ -1,4 +1,5 @@
 #include "category_supplier.h"
+#include "product_management.h"
 
 void category_supplier_management()
 {
@@ -50,6 +51,13 @@ void addcategory()
   Category ct;
   printf("Enter Category ID: ");
   scanf("%s", ct.categoryID);
+
+  if (categoryIdExist(ct.categoryID))
+  {
+    printf("Category ID already exist. Please choose a new one.\n");
+    return;
+  }
+
   printf("Enter Category Name: ");
   scanf("%s", ct.categoryName);
   FILE *c = fopen("category.txt", "a");
@@ -174,6 +182,13 @@ void addsupplier()
   Supplier s;
   printf("Enter Supplier ID : ");
   scanf(" %s", s.supplierID);
+
+  if (supplierIdExist(s.supplierID))
+  {
+    printf("Supplier ID already exists. Please choose a new one.\n");
+    return;
+  }
+
   printf("Enter Supplier Name : ");
   scanf(" %s", s.suppliername);
   printf("Enter the contact number: ");
