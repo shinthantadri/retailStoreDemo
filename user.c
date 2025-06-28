@@ -131,6 +131,29 @@ int getNextTransactionID()
   return id;
 }
 
+void viewProductsCustomer()
+{
+  FILE *pfile = fopen("products.txt", "r");
+  char line[256];
+  Product product;
+
+  // Table Header
+  printf("%-15s %-20s %-10s\n", "Product ID", "Name", "Price");
+  printf("--------------------------------------------------\n");
+
+  while (fgets(line, sizeof(line), pfile))
+  {
+    sscanf(line, "%[^,],%[^,],%[^,],%f,%d,%[^,],%s\n", product.productID, product.name, product.categoryID, &product.price, &product.quantity, product.supplierID, product.status);
+
+    if (product.quantity > 0)
+    {
+      printf("%-15s, %-20s, %.2f RM\n", product.productID, product.name, product.price);
+    }
+  }
+
+  fclose(pfile);
+}
+
 void placeOrder(User *user)
 {
   float total = 0;
@@ -156,6 +179,7 @@ void placeOrder(User *user)
     switch (choice)
     {
     case 1:
+      viewProductsCustomer();
       printf("Enter product ID: ");
       scanf(" %s", productID);
       FILE *productsFile = fopen("products.txt", "r");
