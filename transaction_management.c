@@ -111,7 +111,8 @@ void update_transaction()
   }
   while (fgets(line, sizeof(line), tr))
   {
-    sscanf(line, "%d,%[^,],%f,%d,%s\n", &t.transactionID, t.username, &t.total, &t.paidStatus, t.date);
+    sscanf(line, "%d,%[^,],%f,%[^,],%s\n", &t.transactionID, t.username, &t.total, t.paidStatus, t.date);
+
     if (t.transactionID == id)
     {
       printf("Enter new status (Paid/Unpaid): ");
